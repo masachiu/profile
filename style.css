@@ -4,47 +4,115 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #004000;
     color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    box-sizing: border-box;
-    padding: 20px;
 }
 
-/* コンテナ設定 */
+/* 横幅いっぱいのカバー画像 */
+.cover-wrapper {
+    width: 100%;
+    height: 200px;
+}
+
+.cover-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* コンテナ設定 (中央寄せ) */
 .container {
-    padding: 20px;
-    text-align: center;
     max-width: 400px;
     width: 100%;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-/* プロフィールアイコン (サイズを180pxに拡大) */
+/* プロフィールアイコン (カバー画像に半分重ねる) */
+.profile-icon {
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+}
+
 .profile-icon img {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);*/
+    background-color: #004000;
+    border: 10px solid #004000; /* ★ここに白い縁（4pxの太さ）を追加しました！ */
 }
 
-/* タイトル */
+/* 大きなタイトル */
 .title {
     font-size: 2em;
-    margin-bottom: 5px;
+    margin: 10px 0 20px 0;
     color: #ffffff;
 }
 
-/* サブタイトル (リンク仕様にデザイン調整) */
+/* 小タイトル (両端に線を引くデザイン) */
+.section-title {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 30px 0 20px 0;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.section-title::before { margin-right: 15px; }
+.section-title::after { margin-left: 15px; }
+
+/* プロフィールの箇条書き */
+.profile-list {
+    list-style: none;
+    padding: 0 15px 0 15px;
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+
+.profile-list li {
+    display: flex;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
+
+.profile-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* 箇条書きの見出し部分 */
+.profile-list-label {
+    font-weight: bold;
+    color: #ffffff;
+    width: 10em;
+    flex-shrink: 0;
+}
+
+/* 箇条書きの内容部分 */
+.profile-list-value {
+    color: #f0f0f0;
+}
+
+/* ポートフォリオ等のリンク */
 .subtitle {
     display: inline-block;
     font-size: 1em;
-    margin-bottom: 30px;
-    color: #cccccc;
-    text-decoration: none; /* デフォルトの青い下線を消す */
-    border-bottom: 1px solid #cccccc; /* さりげなく下線をつける */
+    margin-bottom: 1px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #cccccc;
     padding-bottom: 2px;
     transition: color 0.3s ease, border-color 0.3s ease;
 }
@@ -54,22 +122,23 @@ body {
     border-bottom-color: #ffffff;
 }
 
-/* SNSリンクボタンの大枠 (間隔を25pxに拡大) */
+/* SNSリンクボタンの大枠 */
 .social-links {
     display: flex;
     flex-direction: column;
-    gap: 25px; 
+    margin: 30px 0 0 0;
+    gap: 30px; 
 }
 
-/* 各SNSボタンのデザイン (角を丸く16pxに変更) */
+/* 各SNSボタンのデザイン */
 .social-button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: #005F00;
     border: 1px solid #ffffff;
-    padding: 12px 15px;
-    border-radius: 16px; /* 角をさらに丸く */
+    padding: 15px 15px;
+    border-radius: 16px;
     text-decoration: none;
     color: #ffffff;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -84,8 +153,8 @@ body {
 
 /* SNSのアイコン画像 */
 .social-icon {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     border-radius: 4px;
 }
@@ -116,7 +185,7 @@ body {
     line-height: 1.2;
 }
 
-/* レスポンシブ対応 */
+/* スマホ用の微調整 */
 @media (max-width: 400px) {
     .social-title {
         font-size: 1em;
