@@ -1,0 +1,127 @@
+/* 全体設定 */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #004000;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* コンテナ設定 */
+.container {
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* プロフィールアイコン (サイズを180pxに拡大) */
+.profile-icon img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* タイトル */
+.title {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+/* サブタイトル (リンク仕様にデザイン調整) */
+.subtitle {
+    display: inline-block;
+    font-size: 1em;
+    margin-bottom: 30px;
+    color: #cccccc;
+    text-decoration: none; /* デフォルトの青い下線を消す */
+    border-bottom: 1px solid #cccccc; /* さりげなく下線をつける */
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.subtitle:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* SNSリンクボタンの大枠 (間隔を25pxに拡大) */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+}
+
+/* 各SNSボタンのデザイン (角を丸く16pxに変更) */
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #005F00;
+    border: 1px solid #ffffff;
+    padding: 12px 15px;
+    border-radius: 16px; /* 角をさらに丸く */
+    text-decoration: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+    background-color: #007000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* SNSのアイコン画像 */
+.social-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* SNSテキストと縦線の部分 */
+.social-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    margin-left: 15px;
+    padding-left: 15px;
+    flex-grow: 1;
+}
+
+/* SNSの1行目のタイトル */
+.social-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+/* SNSの2行目の説明文 */
+.social-desc {
+    font-size: 0.85em;
+    color: #e0e0e0;
+    line-height: 1.2;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 400px) {
+    .social-title {
+        font-size: 1em;
+    }
+    .social-desc {
+        font-size: 0.75em;
+    }
+}
