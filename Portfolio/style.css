@@ -125,13 +125,14 @@ body {
 .toukou {
     width: 335px;
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 .image {
-    height: 230px;
+    height: 247px;
     width: 330px;
-    margin-top: 25px;
+    margin-top: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
